@@ -1,3 +1,4 @@
+import 'package:app/screens/authenticate/register.dart';
 import 'package:app/screens/authenticate/signin.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +11,7 @@ class _AuthenticateState extends State<Authenticate> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: SignIn(),
+      child: Register(),
     );
   }
 }
