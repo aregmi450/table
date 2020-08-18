@@ -20,17 +20,16 @@ class _SignInState extends State<SignIn> {
       ),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
-        child: RaisedButton(
-            child: Text('Sign In Anon'),
-            onPressed: () async {
-              dynamic result = await _auth.signInAnon();
-              if (result == null) {
-                print('error signing in');
-              } else {
-                print('Signed In');
-                print(result.uid);
-              }
-            }),
+        child: Form(
+          child: Column(
+            children: <Widget>[
+              SizedBox(height: 20.0),
+              TextFormField(onChanged: (val) {}),
+              SizedBox(height: 20.0),
+              TextFormField(obscureText: true, onChanged: (val) {})
+            ],
+          ),
+        ),
       ),
     );
   }
