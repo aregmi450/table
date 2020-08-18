@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "194226478194",
+    "firebase_url": "https://tabler-45410.firebaseio.com",
+    "project_id": "tabler-45410",
+    "storage_bucket": "tabler-45410.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:194226478194:android:3275dd9d071f99e384f6eb",
+        "android_client_info": {
+          "package_name": "com.tabler.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "194226478194-ic3phhhiav4qqrae7g0jn6f2ekc9tui4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaMwEC7AkyikzUh5YMHGbnAzm6isntcT0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "194226478194-ic3phhhiav4qqrae7g0jn6f2ekc9tui4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
