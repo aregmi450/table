@@ -1,3 +1,4 @@
+import 'package:app/shared/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:app/services/auth.dart';
 
@@ -41,22 +42,17 @@ class _RegisterState extends State<Register> {
           key: _formKey,
           child: Column(
             children: <Widget>[
-              SizedBox(height: 20.0),
+              SizedBox(height: 11.0),
               TextFormField(
-                  decoration: InputDecoration(
-                    hintText: 'Email',
-                    fillColor: Colors.white,
-                    filled: true,
-                    enabledBorder: OutlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Colors.white, width: 2.0)),
-                  ),
+                  decoration: textInputDecoration.copyWith(hintText: 'Email'),
                   validator: (val) => val.isEmpty ? 'Enter an email' : null,
                   onChanged: (val) {
                     setState(() => email = val);
                   }),
-              SizedBox(height: 11.0),
+              SizedBox(height: 7.0),
               TextFormField(
+                  decoration:
+                      textInputDecoration.copyWith(hintText: 'Password'),
                   obscureText: true,
                   validator: (val) =>
                       val.length < 6 ? 'Enter a password 6+ chars long' : null,

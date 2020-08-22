@@ -1,4 +1,5 @@
 import 'package:app/services/auth.dart';
+import 'package:app/shared/constants.dart';
 import 'package:flutter/material.dart';
 
 class SignIn extends StatefulWidget {
@@ -20,6 +21,12 @@ class _SignInState extends State<SignIn> {
 
   @override
   Widget build(BuildContext context) {
+    var textFormField = TextFormField(
+        decoration: textInputDecoration.copyWith(hintText: 'Email'),
+        validator: (val) => val.isEmpty ? 'Enter an email' : null,
+        onChanged: (val) {
+          setState(() => email = val);
+        });
     return Scaffold(
       backgroundColor: Colors.red[200],
       appBar: AppBar(
@@ -41,21 +48,19 @@ class _SignInState extends State<SignIn> {
           key: _formKey,
           child: Column(
             children: <Widget>[
-              SizedBox(height: 11.0),
+              SizedBox(height: 9.0),
+              textFormField,
+              SizedBox(height: 9.0),
               TextFormField(
-                  validator: (val) => val.isEmpty ? 'Enter an email' : null,
-                  onChanged: (val) {
-                    setState(() => email = val);
-                  }),
-              SizedBox(height: 11.0),
-              TextFormField(
+                  decoration:
+                      textInputDecoration.copyWith(hintText: 'Password'),
                   obscureText: true,
                   validator: (val) =>
-                      val.length < 6 ? 'Enter a password 6+ chars long' : null,
+                      val.length < 6 ? 'Enter your correct password' : null,
                   onChanged: (val) {
                     setState(() => password = val);
                   }),
-              SizedBox(height: 11.0),
+              SizedBox(height: 9.0),
               RaisedButton(
                   color: Colors.brown[400],
                   child: Text(
