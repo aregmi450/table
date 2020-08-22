@@ -8,7 +8,7 @@ class Loading extends StatelessWidget {
       color: Colors.red[100],
       child: Center(
         child: SpinKitCubeGrid(
-          color: Colors.white,
+          color: Colors.red,
           size: 50.0,
         ),
       ),
