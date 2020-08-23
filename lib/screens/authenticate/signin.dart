@@ -33,11 +33,10 @@ class _SignInState extends State<SignIn> {
               title: Text('Sign in to Tabler'),
               actions: <Widget>[
                 FlatButton.icon(
-                    icon: Icon(Icons.person),
-                    label: Text('Register'),
-                    onPressed: () {
-                      widget.toggleView();
-                    })
+                  icon: Icon(Icons.person),
+                  label: Text('Register'),
+                  onPressed: () => widget.toggleView(),
+                ),
               ],
             ),
             body: Container(
@@ -57,15 +56,15 @@ class _SignInState extends State<SignIn> {
                         }),
                     SizedBox(height: 9.0),
                     TextFormField(
-                        decoration:
-                            textInputDecoration.copyWith(hintText: 'Password'),
-                        obscureText: true,
-                        validator: (val) => val.length < 6
-                            ? 'Enter your correct password'
-                            : null,
-                        onChanged: (val) {
-                          setState(() => password = val);
-                        }),
+                      decoration:
+                          textInputDecoration.copyWith(hintText: 'Password'),
+                      obscureText: true,
+                      validator: (val) =>
+                          val.length < 6 ? 'Enter your correct password' : null,
+                      onChanged: (val) {
+                        setState(() => password = val);
+                      },
+                    ),
                     SizedBox(height: 9.0),
                     RaisedButton(
                         color: Colors.brown[400],
@@ -80,9 +79,9 @@ class _SignInState extends State<SignIn> {
                                 .signInWithEmailAndPassword(email, password);
                             if (result == null) {
                               setState(() {
+                                loading = false;
                                 error =
                                     'COULD NOT SIGN IN WITH THOSE CREDENTIALS';
-                                loading = false;
                               });
                             }
                           }
