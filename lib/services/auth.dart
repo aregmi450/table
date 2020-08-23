@@ -12,7 +12,10 @@ class AuthService {
 
   // auth change user stream
   Stream<User> get user {
-    return _auth.onAuthStateChanged.map(_userFromFirebaseUser);
+    return _auth.onAuthStateChanged
+        .
+        //.map(_userFromFirebaseUser user) => _userfromFirebaseUser(user));
+        map(_userFromFirebaseUser);
   }
 
   // sign in anon
@@ -48,8 +51,8 @@ class AuthService {
       FirebaseUser cafe = result.user;
 
       // create a new document for the user with the uid
-      await DatabaseService(uid: cafe.uid).updateUserData(
-          'new cafe name', 'new owner name', 'new location', 01488546);
+      await DatabaseService(uid: cafe.uid)
+          .updateUserData('new cafe name', 'new location', 01488546);
       return _userFromFirebaseUser(cafe);
     } catch (e) {
       print(e.toString());
