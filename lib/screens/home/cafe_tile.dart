@@ -14,10 +14,10 @@ class CafeTile extends StatelessWidget {
         child: ListTile(
           leading: CircleAvatar(
             radius: 25.0,
-            backgroundColor: Colors.red[200],
+            backgroundColor: Colors.red[cafe.rating],
           ),
           title: Text(cafe.cafename),
-          subtitle: Text('Contact ${cafe.contact}'),
+          subtitle: Text('Rates ${cafe.rating} star(s)'),
         ),
       ),
     );

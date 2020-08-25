@@ -1,8 +1,8 @@
 import 'package:app/models/cafe.dart';
 import 'package:app/screens/home/cafe_list.dart';
+import 'package:app/screens/home/settings_form.dart';
 import 'package:app/services/auth.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:app/services/database.dart';
 import 'package:provider/provider.dart';
 
@@ -17,7 +17,7 @@ class Home extends StatelessWidget {
           builder: (context) {
             return Container(
               padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
-              child: Text('bottom sheet'),
+              child: SettingsForm(),
             );
           });
     }
@@ -42,7 +42,7 @@ class Home extends StatelessWidget {
                 icon: Icon(Icons.settings),
                 label: Text('Settings'),
                 onPressed: () => _showSettingsPanel(),
-              )
+              ),
             ],
           ),
           body: CafeList(),

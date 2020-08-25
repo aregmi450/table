@@ -11,12 +11,7 @@ class CafeList extends StatefulWidget {
 class _CafeListState extends State<CafeList> {
   @override
   Widget build(BuildContext context) {
-    final cafes = Provider.of<List<Cafe>>(context);
-    cafes.forEach((cafe) {
-      print(cafe.cafename);
-      print(cafe.location);
-      print(cafe.contact);
-    });
+    final cafes = Provider.of<List<Cafe>>(context) ?? [];
 
     return ListView.builder(
       itemCount: cafes.length,
