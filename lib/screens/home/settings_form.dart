@@ -32,14 +32,13 @@ class _SettingsFormState extends State<SettingsForm> {
             validator: (val) => val.isEmpty ? 'please enter a name' : null,
             onChanged: (val) => setState(() => _currentcafename = val),
           ),
-          SizedBox(height: 10.0),
+          SizedBox(height: 11.0),
+          //dropdown
           DropdownButtonFormField(
-            value: _currentrating ?? '0',
-            decoration: textInputDecoration,
-            items: rates.map((rating) {
+            items: rates.map((rate) {
               return DropdownMenuItem(
-                value: rating,
-                child: Text('$rates stars'),
+                value: rate,
+                child: Text('$rate stars'),
               );
             }).toList(),
             onChanged: (val) => setState(() => _currentrating = val),
