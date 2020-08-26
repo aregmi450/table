@@ -12,8 +12,6 @@ class _SettingsFormState extends State<SettingsForm> {
 
   //formvalues
   String _currentcafename;
-  String _currentlocation;
-  int _currentcontact;
   int _currentrating;
 
   @override
@@ -53,8 +51,6 @@ class _SettingsFormState extends State<SettingsForm> {
               ),
               onPressed: () async {
                 print(_currentcafename);
-                print(_currentlocation);
-                print(_currentcontact);
                 print(_currentrating);
               }),
         ],
