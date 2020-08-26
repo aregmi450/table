@@ -8,7 +8,7 @@ class SettingsForm extends StatefulWidget {
 
 class _SettingsFormState extends State<SettingsForm> {
   final _formKey = GlobalKey<FormState>();
-  final List<String> rates = ['1', '2', '3', '4', '5'];
+  final List<String> rates = ['0', '1', '2', '3', '4', '5'];
 
   //formvalues
   String _currentcafename;
@@ -33,6 +33,8 @@ class _SettingsFormState extends State<SettingsForm> {
           SizedBox(height: 11.0),
           //dropdown
           DropdownButtonFormField(
+            decoration: textInputDecoration,
+            value: _currentrating ?? '0',
             items: rates.map((rate) {
               return DropdownMenuItem(
                 value: rate,
