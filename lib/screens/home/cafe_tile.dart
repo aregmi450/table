@@ -13,12 +13,8 @@ class CafeTile extends StatelessWidget {
       child: Card(
         margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
         child: ListTile(
-          leading: CircleAvatar(
-            radius: 25.0,
-            backgroundColor: Colors.red,
-          ),
           title: Text(cafe.name),
-          subtitle: Text('lives at ${cafe.location} '),
+          subtitle: Text('lives at ${cafe.location}'),
         ),
       ),
     );
