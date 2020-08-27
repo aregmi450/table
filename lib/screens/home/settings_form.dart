@@ -12,7 +12,7 @@ class SettingsForm extends StatefulWidget {
 
 class _SettingsFormState extends State<SettingsForm> {
   final _formKey = GlobalKey<FormState>();
-  final List<String> location = [
+  final List<String> locations = [
     'Kathmandu',
     'Patan',
     'Bhaktapur',
@@ -53,10 +53,10 @@ class _SettingsFormState extends State<SettingsForm> {
                   //dropdown
                   DropdownButtonFormField(
                     decoration: textInputDecoration,
-                    items: location.map((location) {
+                    items: locations.map((location) {
                       return DropdownMenuItem(
                         value: location,
-                        child: Text('Here'),
+                        child: Text('$location'),
                       );
                     }).toList(),
                     onChanged: (val) => setState(() => _currentlocation = val),
