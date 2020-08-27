@@ -60,7 +60,7 @@ class _RegisterState extends State<Register> {
                           textInputDecoration.copyWith(hintText: 'Password'),
                       obscureText: true,
                       validator: (val) => val.length < 6
-                          ? 'Enter a password 6+ chars long'
+                          ? 'Enter a password with 6+ characters'
                           : null,
                       onChanged: (val) {
                         setState(() => password = val);
@@ -81,7 +81,7 @@ class _RegisterState extends State<Register> {
                             if (result == null) {
                               setState(() {
                                 loading = false;
-                                error = 'enter your valid email';
+                                error = 'Enter your valid email';
                               });
                             }
                           }

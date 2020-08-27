@@ -81,7 +81,7 @@ class _SignInState extends State<SignIn> {
                               setState(() {
                                 loading = false;
                                 error =
-                                    'COULD NOT SIGN IN WITH THOSE CREDENTIALS';
+                                    'Could not sign in with those credentials';
                               });
                             }
                           }

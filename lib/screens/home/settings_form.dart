@@ -22,7 +22,7 @@ class _SettingsFormState extends State<SettingsForm> {
 
   //formvalues
   String _currentname;
-  int _currentlocation;
+  String _currentlocation;
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +53,6 @@ class _SettingsFormState extends State<SettingsForm> {
                   //dropdown
                   DropdownButtonFormField(
                     decoration: textInputDecoration,
-                    value: _currentlocation ?? userData.rating,
                     items: location.map((location) {
                       return DropdownMenuItem(
                         value: location,

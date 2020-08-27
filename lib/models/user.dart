@@ -7,7 +7,7 @@ class User {
 class UserData {
   final String uid;
   final String cafename;
-  final int rating;
+  final String location;
 
-  UserData({this.uid, this.cafename, this.rating});
+  UserData({this.uid, this.cafename, this.location});
 }

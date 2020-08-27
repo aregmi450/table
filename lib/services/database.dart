@@ -33,7 +33,7 @@ class DatabaseService {
     return UserData(
         uid: uid,
         cafename: snapshot.data['name'],
-        rating: snapshot.data['location']);
+        location: snapshot.data['location']);
   }
 
 // get cafe data

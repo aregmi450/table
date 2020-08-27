@@ -18,7 +18,7 @@ class CafeTile extends StatelessWidget {
             backgroundColor: Colors.red,
           ),
           title: Text(cafe.name),
-          subtitle: Text('is situated at ${cafe.location} '),
+          subtitle: Text('lives at ${cafe.location} '),
         ),
       ),
     );
