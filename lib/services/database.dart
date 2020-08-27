@@ -1,4 +1,5 @@
 import 'package:app/models/cafe.dart';
+import 'package:app/models/user.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class DatabaseService {
@@ -13,8 +14,6 @@ class DatabaseService {
       String cafename, String location, int contact, int rating) async {
     return await cafeCollection.document(uid).setData({
       'cafename': cafename,
-      'location': location,
-      'contact': contact,
       'rating': rating,
     });
   }
@@ -24,15 +23,28 @@ class DatabaseService {
     return snapshot.documents.map((doc) {
       return Cafe(
         cafename: doc.data['cafename'] ?? '',
-        location: doc.data['location'] ?? '',
         rating: doc.data['rating'] ?? 0,
-        contact: doc.data['contact'] ?? 0,
       );
     }).toList();
+  }
+
+  // user data from snapshot
+
+  UserData _userDataFromSnapshot(DocumentSnapshot snapshot) {
+    return UserData(
+        uid: uid,
+        cafename: snapshot.data['cafename'],
+        rating: snapshot.data['rating']);
   }
 
 // get cafe data
   Stream<List<Cafe>> get cafes {
     return cafeCollection.snapshots().map(_cafelistFromSnapshot);
+  }
+
+// get user doc stream
+
+  Stream<UserData> get userData {
+    return cafeCollection.document(uid).snapshots().map(_userDataFromSnapshot);
   }
 }
