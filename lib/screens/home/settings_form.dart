@@ -8,19 +8,10 @@ class SettingsForm extends StatefulWidget {
 
 class _SettingsFormState extends State<SettingsForm> {
   final _formKey = GlobalKey<FormState>();
-<<<<<<< HEAD
   final List<String> rates = ['0', '1', '2', '3', '4', '5'];
 
   //formvalues
   String _currentcafename;
-=======
-  final List<String> rates = ['1', '2', '3', '4', '5'];
-
-  //formvalues
-  String _currentcafename;
-  String _currentlocation;
-  int _currentcontact;
->>>>>>> a9e96c581e9dd354dd674f695dda14ee401b9d0e
   int _currentrating;
 
   @override
@@ -39,7 +30,6 @@ class _SettingsFormState extends State<SettingsForm> {
             validator: (val) => val.isEmpty ? 'please enter a name' : null,
             onChanged: (val) => setState(() => _currentcafename = val),
           ),
-<<<<<<< HEAD
           SizedBox(height: 11.0),
           //dropdown
           DropdownButtonFormField(
@@ -49,16 +39,6 @@ class _SettingsFormState extends State<SettingsForm> {
               return DropdownMenuItem(
                 value: rate,
                 child: Text('$rate stars'),
-=======
-          SizedBox(height: 10.0),
-          DropdownButtonFormField(
-            value: _currentrating ?? '0',
-            decoration: textInputDecoration,
-            items: rates.map((rating) {
-              return DropdownMenuItem(
-                value: rating,
-                child: Text('$rates stars'),
->>>>>>> a9e96c581e9dd354dd674f695dda14ee401b9d0e
               );
             }).toList(),
             onChanged: (val) => setState(() => _currentrating = val),
@@ -73,11 +53,6 @@ class _SettingsFormState extends State<SettingsForm> {
               ),
               onPressed: () async {
                 print(_currentcafename);
-<<<<<<< HEAD
-=======
-                print(_currentlocation);
-                print(_currentcontact);
->>>>>>> a9e96c581e9dd354dd674f695dda14ee401b9d0e
                 print(_currentrating);
               }),
         ],
