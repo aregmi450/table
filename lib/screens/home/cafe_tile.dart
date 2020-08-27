@@ -1,8 +1,9 @@
+import 'package:app/models/user.dart';
 import 'package:flutter/material.dart';
 import 'package:app/models/cafe.dart';
 
 class CafeTile extends StatelessWidget {
-  final Cafe cafe;
+  final Users cafe;
   CafeTile({this.cafe});
 
   @override
@@ -14,10 +15,10 @@ class CafeTile extends StatelessWidget {
         child: ListTile(
           leading: CircleAvatar(
             radius: 25.0,
-            backgroundColor: Colors.red[cafe.rating],
+            backgroundColor: Colors.red,
           ),
-          title: Text(cafe.cafename),
-          subtitle: Text('Rates ${cafe.rating} star(s)'),
+          title: Text(cafe.name),
+          subtitle: Text('is situated at ${cafe.location} '),
         ),
       ),
     );

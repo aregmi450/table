@@ -1,4 +1,5 @@
 import 'package:app/models/cafe.dart';
+import 'package:app/models/user.dart';
 import 'package:app/screens/home/cafe_list.dart';
 import 'package:app/screens/home/settings_form.dart';
 import 'package:app/services/auth.dart';
@@ -22,7 +23,7 @@ class Home extends StatelessWidget {
           });
     }
 
-    return StreamProvider<List<Cafe>>.value(
+    return StreamProvider<List<Users>>.value(
         value: DatabaseService().cafes,
         child: Scaffold(
           backgroundColor: Colors.red[50],

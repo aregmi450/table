@@ -10,20 +10,19 @@ class DatabaseService {
   final CollectionReference cafeCollection =
       Firestore.instance.collection('cafe');
 
-  Future updateUserData(
-      String cafename, String location, int contact, int rating) async {
+  Future updateUserData(String name, String location) async {
     return await cafeCollection.document(uid).setData({
-      'cafename': cafename,
-      'rating': rating,
+      'name': name,
+      'location': location,
     });
   }
 
   // cafe list from snapshot
-  List<Cafe> _cafelistFromSnapshot(QuerySnapshot snapshot) {
+  List<Users> _cafelistFromSnapshot(QuerySnapshot snapshot) {
     return snapshot.documents.map((doc) {
-      return Cafe(
-        cafename: doc.data['cafename'] ?? '',
-        rating: doc.data['rating'] ?? 0,
+      return Users(
+        name: doc.data['name'] ?? '',
+        location: doc.data['location'] ?? '',
       );
     }).toList();
   }
@@ -33,12 +32,12 @@ class DatabaseService {
   UserData _userDataFromSnapshot(DocumentSnapshot snapshot) {
     return UserData(
         uid: uid,
-        cafename: snapshot.data['cafename'],
-        rating: snapshot.data['rating']);
+        cafename: snapshot.data['name'],
+        rating: snapshot.data['location']);
   }
 
 // get cafe data
-  Stream<List<Cafe>> get cafes {
+  Stream<List<Users>> get cafes {
     return cafeCollection.snapshots().map(_cafelistFromSnapshot);
   }
 

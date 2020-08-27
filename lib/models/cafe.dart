@@ -1,6 +1,6 @@
-class Cafe {
-  final String cafename;
-  final int rating;
+class Users {
+  final String name;
+  final String location;
 
-  Cafe({this.cafename, this.rating});
+  Users({this.name, this.location});
 }
