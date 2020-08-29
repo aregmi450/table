@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Text(
-                        "Welcome",
+                        "Discover",
                         style: TextStyle(
                           fontSize: 30.0,
                           fontWeight: FontWeight.bold,
@@ -69,6 +69,11 @@ class _HomePageState extends State<HomePage> {
                     "Roadhouse Cafe",
                     "Pokhara",
                     "assets/roadhouse.jpg",
+                  ),
+                  buildItem(
+                    "Dunga Restro and Bar",
+                    "Lakeside",
+                    "assets/dunga.jpg",
                   ),
                 ],
               )),
