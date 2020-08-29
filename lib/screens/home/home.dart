@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Text(
-                        "",
+                        "Discover",
                         style: TextStyle(
                           fontSize: 30.0,
                           fontWeight: FontWeight.bold,
