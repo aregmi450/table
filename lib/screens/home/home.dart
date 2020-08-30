@@ -43,9 +43,15 @@ class _HomePageState extends State<HomePage> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                    ],
-                  ),
-                  SizedBox(
+            FlatButton.icon(
+              icon: Icon(Icons.person),
+              label: Text('logout'),
+              onPressed: () async {
+                await _auth.signOut();
+              },
+            ),
+            ],
+            SizedBox(
                     height: 20.0,
                   ),
                 ],
