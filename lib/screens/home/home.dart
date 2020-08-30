@@ -1,3 +1,4 @@
+import 'package:app/services/auth.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -6,6 +7,9 @@ void main() {
 
 class MyRestaurantBooking extends StatelessWidget {
   // This widget is the root of application.
+
+  final AuthService _auth = AuthService();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -26,6 +30,25 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.red[300],
+      appBar: AppBar(
+        title: Text(
+          'Tabler',
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
+        backgroundColor: Colors.red[200],
+        elevation: 0.0,
+        actions: <Widget>[
+          FlatButton.icon(
+            icon: Icon(Icons.person),
+            label: Text('logout'),
+            onPressed: () async {
+              await _auth.SignOut();
+            },
+          )
+        ],
+      ),
       body: Container(
         child: Column(
           children: <Widget>[
@@ -39,7 +62,7 @@ class _HomePageState extends State<HomePage> {
                       Text(
                         "Discover",
                         style: TextStyle(
-                          fontSize: 30.0,
+                          fontSize: 20.0,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
