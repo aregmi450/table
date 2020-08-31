@@ -41,12 +41,13 @@ class _HomePageState extends State<HomePage> {
         elevation: 0.0,
         actions: <Widget>[
           FlatButton.icon(
-            icon: Icon(Icons.person),
-            label: Text('logout'),
-            onPressed: () async {
-              await _auth.SignOut();
-            },
-          )
+              icon: Icon(Icons.person),
+              label: Text('logout'),
+              onPressed: () async {
+                _auth.signOut().then((onValue) {
+                  Navigator.of(context).pushReplacementNamed('/login');
+                });
+              })
         ],
       ),
       body: Container(
