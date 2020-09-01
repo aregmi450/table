@@ -1,3 +1,5 @@
+
+import 'package:app/screens/authenticate/signin.dart';
 import 'package:app/services/auth.dart';
 import 'package:flutter/material.dart';
 
@@ -43,9 +45,11 @@ class _HomePageState extends State<HomePage> {
           FlatButton.icon(
               icon: Icon(Icons.person),
               label: Text('logout'),
-              onPressed: () async {
-                _auth.signOut().then((onValue) {
-                  Navigator.of(context).pushReplacementNamed('/login');
+                onPressed: ()async {
+                 Navigator.pushAndRemoveUntil(
+                   context,
+                 MaterialPageRoute(builder: (context) => SignIn()),
+                  );
                 });
               })
         ],
