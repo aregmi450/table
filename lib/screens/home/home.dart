@@ -1,7 +1,5 @@
-import 'package:app/services/auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
 import '../authenticate/signin.dart';
 
 void main() {
@@ -10,8 +8,6 @@ void main() {
 
 class MyRestaurantBooking extends StatelessWidget {
   // This widget is the root of application.
-
-  final AuthService _auth = AuthService();
 
   @override
   Widget build(BuildContext context) {
