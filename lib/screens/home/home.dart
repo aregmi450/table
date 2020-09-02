@@ -119,7 +119,36 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Container buildItem(String title, String subTitle, String url) {}
+  Container buildItem(String title, String subTitle, String url) {
+    return Container(
+        margin: EdgeInsets.symmetric(vertical: 12.0),
+        padding: EdgeInsets.symmetric(horizontal: 25.0),
+        child: Column(children: <Widget>[
+          Container(
+            height: 200,
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(url),
+                  fit: BoxFit.cover,
+                ),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(10.0),
+                  topRight: Radius.circular(10.0),
+                )),
+          ),
+          Text(
+            title,
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0),
+          ),
+          Text(
+            subTitle,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 14.0,
+            ),
+          ),
+        ]));
+  }
 }
 
 class RestaurantCard extends StatelessWidget {
