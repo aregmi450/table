@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                       Text(
                         "Discover",
                         style: TextStyle(
-                          fontSize: 20.0,
+                          fontSize: 40.0,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -151,10 +151,10 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-class RestaurantCard extends StatelessWidget {
+class RDetails extends StatelessWidget {
   String title, subTitle, url;
 
-  RestaurantCard(this.title, this.subTitle, this.url);
+  RDetails(this.title, this.subTitle, this.url);
 
   @override
   Widget build(BuildContext context) {
@@ -162,8 +162,7 @@ class RestaurantCard extends StatelessWidget {
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (_) =>
-                RestaurantDetailsPage(this.title, this.subTitle, this.url),
+            builder: (_) => RDetails(this.title, this.subTitle, this.url),
           ),
         );
       },
