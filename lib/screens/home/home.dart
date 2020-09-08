@@ -3,6 +3,7 @@ import 'package:app/services/auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../authenticate/signin.dart';
+import '../home/details.dart';
 
 void main() {
   runApp(MyApp());
@@ -122,17 +123,24 @@ class _HomePageState extends State<HomePage> {
         margin: EdgeInsets.symmetric(vertical: 12.0),
         padding: EdgeInsets.symmetric(horizontal: 25.0),
         child: Column(children: <Widget>[
-          Container(
-            height: 200,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(url),
-                  fit: BoxFit.cover,
-                ),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(10.0),
-                  topRight: Radius.circular(10.0),
-                )),
+          Card(
+            child: InkWell(
+              onTap: () {
+                SignIn();
+              },
+              child: Container(
+                height: 200,
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(url),
+                      fit: BoxFit.cover,
+                    ),
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(10.0),
+                      topRight: Radius.circular(10.0),
+                    )),
+              ),
+            ),
           ),
           Text(
             title,
