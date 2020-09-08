@@ -11,8 +11,6 @@ void main() {
 class MyRestaurantBooking extends StatelessWidget {
   // This widget is the root of application.
 
-  final AuthService _auth = AuthService();
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

@@ -93,9 +93,6 @@ class _RDetailsState extends State<RDetails> {
                           crossAxisAlignment: CrossAxisAlignment.end,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: <Widget>[
-                            Container(SizedBox(
-                              height: 10.0,
-                            )),
                             Text(
                               "\$246",
                               style: TextStyle(
