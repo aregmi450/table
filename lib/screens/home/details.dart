@@ -158,7 +158,7 @@ class _RDetailsState extends State<RDetailsPage> {
                     _selectDate(context);
                   });
                 },
-                color: Colors.blue,
+                color: Colors.red,
                 child: Text(
                   "Date Picker",
                   style: TextStyle(color: Colors.white),
