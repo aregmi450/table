@@ -10,7 +10,7 @@ class RDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Choose your time"),
+        title: Text('Choose your time'),
         backgroundColor: Colors.red[400],
       ),
       backgroundColor: Colors.red[400],
