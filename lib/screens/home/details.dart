@@ -1,3 +1,4 @@
+import 'package:app/shared/constants.dart';
 import 'package:flutter/material.dart';
 
 //Do bring stuffs from this class to home class
@@ -10,10 +11,8 @@ class RDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Choose your time'),
-        backgroundColor: Colors.red[400],
+        title: Text("Details Page"),
       ),
-      backgroundColor: Colors.red[400],
       body: Container(
         margin: EdgeInsets.symmetric(vertical: 12.0),
         padding: EdgeInsets.symmetric(horizontal: 25.0),
