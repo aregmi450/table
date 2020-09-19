@@ -1,7 +1,80 @@
 import 'package:app/shared/constants.dart';
 import 'package:flutter/material.dart';
 
-class RDetails extends StatefulWidget {
+//Do bring stuffs from this class to home class
+class RDetails extends StatelessWidget {
+  String title, subTitle, url;
+
+  RDetails(this.title, this.subTitle, this.url);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Details Page"),),
+      body: Container(
+        margin: EdgeInsets.symmetric(vertical: 12.0),
+        padding: EdgeInsets.symmetric(horizontal: 25.0),
+        child: Column(
+          children: <Widget>[
+            Container(
+              height: 200,
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(url),
+                    fit: BoxFit.cover,
+                  ),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(10.0),
+                    topRight: Radius.circular(10.0),
+                  )),
+            ),
+            Container(
+              padding: EdgeInsets.all(25.0),
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(10.0),
+                      bottomRight: Radius.circular(10.0)),
+                  boxShadow: [
+                    BoxShadow(
+                        blurRadius: 2.0, spreadRadius: 1.0, color: Colors.grey)
+                  ]),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        title,
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 16.0),
+                      ),
+                      Text(
+                        subTitle,
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12.0,
+                            color: Colors.grey),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
+
+class RDetailsPage extends StatefulWidget {
   @override
   _RDetailsState createState() => _RDetailsState();
 }
@@ -13,7 +86,7 @@ const MaterialColor _buttonTextColor = MaterialColor(0xFFC41A3B, <int, Color>{
   300: Color(0xFFC41A3B),
 });
 
-class _RDetailsState extends State<RDetails> {
+class _RDetailsState extends State<RDetailsPage> {
   String title = 'Date Picker';
   DateTime _date = DateTime.now();
 
