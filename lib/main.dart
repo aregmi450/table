@@ -1,3 +1,4 @@
+import 'package:app/screens/home/home.dart';
 import 'package:app/screens/wrapper.dart';
 import 'package:app/services/auth.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return StreamProvider<User>.value(
       value: AuthService().user,
       child: MaterialApp(
-        home: wrapper(),
+        home: MyRestaurantBooking(),
       ),
     );
   }

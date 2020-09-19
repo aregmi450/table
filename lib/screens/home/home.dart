@@ -5,10 +5,6 @@ import 'package:flutter/material.dart';
 import '../authenticate/signin.dart';
 import '../home/details.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
 class MyRestaurantBooking extends StatelessWidget {
   // This widget is the root of application.
 
@@ -90,21 +86,25 @@ class _HomePageState extends State<HomePage> {
                   child: ListView(
                 children: <Widget>[
                   buildItem(
+                    context,
                     "Trisara",
                     "Lazimpat",
                     "assets/trisara.jpg",
                   ),
                   buildItem(
+                    context,
                     "Tamarind",
                     "Jhamsikhel",
                     "assets/tamarind.jpg",
                   ),
                   buildItem(
+                    context,
                     "Dunga Restro & Bar",
                     "Lakeside",
                     "assets/dunga.jpg",
                   ),
                   buildItem(
+                    context,
                     "Roadhouse Cafe",
                     "Pokhara",
                     "assets/roadhouse.jpg",
@@ -118,15 +118,17 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Container buildItem(String title, String subTitle, String url) {
+  Container buildItem(BuildContext context,String title, String subTitle, String url) {
     return Container(
         margin: EdgeInsets.symmetric(vertical: 12.0),
         padding: EdgeInsets.symmetric(horizontal: 25.0),
         child: Column(children: <Widget>[
           Card(
-            child: InkWell(
+            child:InkWell(
               onTap: () {
-                SignIn();
+               Navigator.of(context).push(MaterialPageRoute(
+                 builder: (_)=>RDetails(title,subTitle,url)
+               ));
               },
               child: Container(
                 height: 200,
@@ -157,95 +159,3 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-class RDetails extends StatelessWidget {
-  String title, subTitle, url;
-
-  RDetails(this.title, this.subTitle, this.url);
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (_) => RDetails(this.title, this.subTitle, this.url),
-          ),
-        );
-      },
-      child: Container(
-        margin: EdgeInsets.symmetric(vertical: 12.0),
-        padding: EdgeInsets.symmetric(horizontal: 25.0),
-        child: Column(
-          children: <Widget>[
-            Container(
-              height: 200,
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(url),
-                    fit: BoxFit.cover,
-                  ),
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(10.0),
-                    topRight: Radius.circular(10.0),
-                  )),
-            ),
-            Container(
-              padding: EdgeInsets.all(25.0),
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(10.0),
-                      bottomRight: Radius.circular(10.0)),
-                  boxShadow: [
-                    BoxShadow(
-                        blurRadius: 2.0, spreadRadius: 1.0, color: Colors.grey)
-                  ]),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text(
-                        title,
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 16.0),
-                      ),
-                      Text(
-                        subTitle,
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 12.0,
-                            color: Colors.grey),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class RestaurantDetailsPage extends StatelessWidget {
-  final String title, subTitle, url;
-
-  const RestaurantDetailsPage(this.title, this.subTitle, this.url);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          Text(this.title),
-          Text(this.subTitle),
-          Image.asset(url, height: 200)
-        ],
-      ),
-    );
-  }
-}
