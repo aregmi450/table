@@ -1,3 +1,6 @@
+import 'package:app/screens/authenticate/register.dart';
+import 'package:app/screens/authenticate/signin.dart';
+import 'package:app/screens/home/cafe_tile.dart';
 import 'package:app/screens/home/home.dart';
 import 'package:app/screens/wrapper.dart';
 import 'package:app/services/auth.dart';
@@ -14,7 +17,7 @@ class MyApp extends StatelessWidget {
     return StreamProvider<User>.value(
       value: AuthService().user,
       child: MaterialApp(
-        home: HomePage(),
+        home: CafeTile(),
       ),
     );
   }
